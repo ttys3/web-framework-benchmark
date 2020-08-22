@@ -55,48 +55,47 @@ hardware
 ❯ go test -bench=.
 goos: linux
 goarch: amd64
-pkg: webfrmbench
-BenchmarkEchoStatic-12       	   39211	     31042 ns/op	    2141 B/op	     157 allocs/op
-BenchmarkEchoGitHubAPI-12    	   25359	     46970 ns/op	    2994 B/op	     203 allocs/op
-BenchmarkEchoGplusAPI-12     	  506317	      2480 ns/op	     172 B/op	      13 allocs/op
-BenchmarkEchoParseAPI-12     	  286018	      4354 ns/op	     329 B/op	      26 allocs/op
-BenchmarkGinStatic-12        	   34501	     34812 ns/op	    8543 B/op	     157 allocs/op
-BenchmarkGinGitHubAPI-12     	   24847	     49210 ns/op	   11143 B/op	     203 allocs/op
-BenchmarkGinGplusAPI-12      	  421052	      2647 ns/op	     706 B/op	      13 allocs/op
-BenchmarkGinParseAPI-12      	  230026	      5009 ns/op	    1398 B/op	      26 allocs/op
+pkg: github.com/vishr/web-framework-benchmark
+BenchmarkEchoGin/framework=Echo/router=Static-12         	   39493	     30663 ns/op	    2135 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Gin/router=Static-12          	   35595	     32880 ns/op	    8512 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GitHubAPI-12      	   25204	     47620 ns/op	    3003 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GitHubAPI-12       	   24991	     46444 ns/op	   11135 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GplusAPI-12       	  509173	      2402 ns/op	     172 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GplusAPI-12        	  446631	      2540 ns/op	     701 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Echo/router=ParseAPI-12       	  291855	      4198 ns/op	     326 B/op	      26 allocs/op
+BenchmarkEchoGin/framework=Gin/router=ParseAPI-12        	  244062	      5066 ns/op	    1390 B/op	      26 allocs/op
 PASS
-ok  	webfrmbench	11.397s
+ok  	github.com/vishr/web-framework-benchmark	12.273s
 
 
 ❯ go test -bench=.
 goos: linux
 goarch: amd64
-pkg: webfrmbench
-BenchmarkEchoStatic-12       	   39014	     31181 ns/op	    2146 B/op	     157 allocs/op
-BenchmarkEchoGitHubAPI-12    	   24788	     46777 ns/op	    3026 B/op	     203 allocs/op
-BenchmarkEchoGplusAPI-12     	  489716	      2416 ns/op	     174 B/op	      13 allocs/op
-BenchmarkEchoParseAPI-12     	  287944	      4246 ns/op	     328 B/op	      26 allocs/op
-BenchmarkGinStatic-12        	   35066	     33564 ns/op	    8527 B/op	     157 allocs/op
-BenchmarkGinGitHubAPI-12     	   24537	     47691 ns/op	   11161 B/op	     203 allocs/op
-BenchmarkGinGplusAPI-12      	  451989	      2641 ns/op	     700 B/op	      13 allocs/op
-BenchmarkGinParseAPI-12      	  227436	      5104 ns/op	    1400 B/op	      26 allocs/op
+pkg: github.com/vishr/web-framework-benchmark
+BenchmarkEchoGin/framework=Echo/router=Static-12         	   40330	     28822 ns/op	    2117 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Gin/router=Static-12          	   34998	     33580 ns/op	    8528 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GitHubAPI-12      	   26522	     46176 ns/op	    2934 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GitHubAPI-12       	   24867	     47791 ns/op	   11142 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GplusAPI-12       	  509270	      2382 ns/op	     172 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GplusAPI-12        	  432816	      2561 ns/op	     704 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Echo/router=ParseAPI-12       	  278415	      4181 ns/op	     332 B/op	      26 allocs/op
+BenchmarkEchoGin/framework=Gin/router=ParseAPI-12        	  209114	      5131 ns/op	    1414 B/op	      26 allocs/op
 PASS
-ok  	webfrmbench	11.293s
-
+ok  	github.com/vishr/web-framework-benchmark	11.078s
 
 
 ❯ go test -bench=.
 goos: linux
 goarch: amd64
-pkg: webfrmbench
-BenchmarkEchoStatic-12       	   39085	     31134 ns/op	    2144 B/op	     157 allocs/op
-BenchmarkEchoGitHubAPI-12    	   25714	     46939 ns/op	    2976 B/op	     203 allocs/op
-BenchmarkEchoGplusAPI-12     	  504808	      2354 ns/op	     172 B/op	      13 allocs/op
-BenchmarkEchoParseAPI-12     	  293137	      4247 ns/op	     326 B/op	      26 allocs/op
-BenchmarkGinStatic-12        	   34987	     33409 ns/op	    8529 B/op	     157 allocs/op
-BenchmarkGinGitHubAPI-12     	   25221	     47322 ns/op	   11122 B/op	     203 allocs/op
-BenchmarkGinGplusAPI-12      	  455521	      2605 ns/op	     700 B/op	      13 allocs/op
-BenchmarkGinParseAPI-12      	  242322	      4864 ns/op	    1391 B/op	      26 allocs/op
+pkg: github.com/vishr/web-framework-benchmark
+BenchmarkEchoGin/framework=Echo/router=Static-12         	   38719	     30131 ns/op	    2153 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Gin/router=Static-12          	   34903	     33395 ns/op	    8531 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GitHubAPI-12      	   25060	     45541 ns/op	    3011 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GitHubAPI-12       	   24819	     47589 ns/op	   11145 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GplusAPI-12       	  505262	      2389 ns/op	     172 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GplusAPI-12        	  438598	      2689 ns/op	     703 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Echo/router=ParseAPI-12       	  290649	      4251 ns/op	     327 B/op	      26 allocs/op
+BenchmarkEchoGin/framework=Gin/router=ParseAPI-12        	  225582	      5007 ns/op	    1401 B/op	      26 allocs/op
 PASS
-ok  	webfrmbench	11.358s
+ok  	github.com/vishr/web-framework-benchmark	11.207s
 ```

@@ -5,8 +5,8 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="scale(1, -1) translate(0, -265)">
 <path d="M0,0L530,0L530,265L0,265Z" style="fill:#FFFFFF" />
-<text x="213.14" y="-253.45" transform="scale(1, -1)"
-	style="font-family:Times;font-weight:normal;font-style:normal;font-size:12px">BenchmarkRouter-12</text>
+<text x="216.02" y="-253.45" transform="scale(1, -1)"
+	style="font-family:Times;font-weight:normal;font-style:normal;font-size:12px">BenchmarkEchoGin</text>
 <text x="295.26" y="-3.8613" transform="scale(1, -1)"
 	style="font-family:Times;font-weight:normal;font-style:normal;font-size:12px">router</text>
 <text x="96.666" y="-15.602" transform="scale(1, -1)"
@@ -23,24 +23,24 @@
 </g>
 <text x="35.416" y="-25.509" transform="scale(1, -1)"
 	style="font-family:Times;font-weight:normal;font-style:normal;font-size:10px">0</text>
-<text x="15.416" y="-118.26" transform="scale(1, -1)"
+<text x="15.416" y="-117.7" transform="scale(1, -1)"
 	style="font-family:Times;font-weight:normal;font-style:normal;font-size:10px">20000</text>
-<text x="15.416" y="-211.01" transform="scale(1, -1)"
+<text x="15.416" y="-209.88" transform="scale(1, -1)"
 	style="font-family:Times;font-weight:normal;font-style:normal;font-size:10px">40000</text>
 <path d="M42.916,30.23L50.916,30.23" style="fill:none;stroke:#000000;stroke-width:0.5" />
-<path d="M42.916,122.98L50.916,122.98" style="fill:none;stroke:#000000;stroke-width:0.5" />
-<path d="M42.916,215.73L50.916,215.73" style="fill:none;stroke:#000000;stroke-width:0.5" />
-<path d="M46.916,76.605L50.916,76.605" style="fill:none;stroke:#000000;stroke-width:0.5" />
-<path d="M46.916,169.36L50.916,169.36" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M42.916,122.42L50.916,122.42" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M42.916,214.6L50.916,214.6" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M46.916,76.324L50.916,76.324" style="fill:none;stroke:#000000;stroke-width:0.5" />
+<path d="M46.916,168.51L50.916,168.51" style="fill:none;stroke:#000000;stroke-width:0.5" />
 <path d="M50.916,30.23L50.916,249.58" style="fill:none;stroke:#000000;stroke-width:0.5" />
-<path d="M63.053,30.23L63.053,166.3L93.053,166.3L93.053,30.23Z" style="fill:#F15A60" />
-<path d="M197.41,30.23L197.41,248.59L227.41,248.59L227.41,30.23Z" style="fill:#F15A60" />
-<path d="M331.76,30.23L331.76,41.235L361.76,41.235L361.76,30.23Z" style="fill:#F15A60" />
-<path d="M466.11,30.23L466.11,49.88L496.11,49.88L496.11,30.23Z" style="fill:#F15A60" />
-<path d="M93.053,30.23L93.053,184.84L123.05,184.84L123.05,30.23Z" style="fill:#7AC36A" />
+<path d="M63.053,30.23L63.053,169.11L93.053,169.11L93.053,30.23Z" style="fill:#F15A60" />
+<path d="M197.41,30.23L197.41,240.14L227.41,240.14L227.41,30.23Z" style="fill:#F15A60" />
+<path d="M331.76,30.23L331.76,41.242L361.76,41.242L361.76,30.23Z" style="fill:#F15A60" />
+<path d="M466.11,30.23L466.11,49.825L496.11,49.825L496.11,30.23Z" style="fill:#F15A60" />
+<path d="M93.053,30.23L93.053,184.16L123.05,184.16L123.05,30.23Z" style="fill:#7AC36A" />
 <path d="M227.41,30.23L227.41,249.58L257.41,249.58L257.41,30.23Z" style="fill:#7AC36A" />
-<path d="M361.76,30.23L361.76,42.209L391.76,42.209L391.76,30.23Z" style="fill:#7AC36A" />
-<path d="M496.11,30.23L496.11,53.529L526.11,53.529L526.11,30.23Z" style="fill:#7AC36A" />
+<path d="M361.76,30.23L361.76,42.625L391.76,42.625L391.76,30.23Z" style="fill:#7AC36A" />
+<path d="M496.11,30.23L496.11,53.309L526.11,53.309L526.11,30.23Z" style="fill:#7AC36A" />
 <path d="M510,237.81L510,249.58L530,249.58L530,237.81Z" style="fill:#F15A60" />
 <text x="482.34" y="-238.03" transform="scale(1, -1)"
 	style="font-family:Times;font-weight:normal;font-style:normal;font-size:12px">Echo</text>

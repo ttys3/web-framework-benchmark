@@ -1,6 +1,7 @@
 package router
 
 import (
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -551,28 +552,15 @@ func echoHandler(method, path string) echo.HandlerFunc {
 	}
 }
 
-func BenchmarkEchoStatic(b *testing.B) {
-	e := echo.New()
-	loadEchoRoutes(e, static)
-	benchmarkRoutes(b, e, static)
-}
-
-func BenchmarkEchoGitHubAPI(b *testing.B) {
-	e := echo.New()
-	loadEchoRoutes(e, githubAPI)
-	benchmarkRoutes(b, e, githubAPI)
-}
-
-func BenchmarkEchoGplusAPI(b *testing.B) {
-	e := echo.New()
-	loadEchoRoutes(e, gplusAPI)
-	benchmarkRoutes(b, e, gplusAPI)
-}
-
-func BenchmarkEchoParseAPI(b *testing.B) {
-	e := echo.New()
-	loadEchoRoutes(e, parseAPI)
-	benchmarkRoutes(b, e, parseAPI)
+func benchEcho(b *testing.B, frmName, routeName string, routes []*Route) {
+	b.ResetTimer()
+	// name the bench according to https://github.com/golang/proposal/blob/master/design/14313-benchmark-format.md
+	// sample name: BenchmarkEchoGin/framework=Echo/router=Static-12
+	b.Run(fmt.Sprintf("framework=%s/router=%s", frmName, routeName), func(b *testing.B) {
+		e := echo.New()
+		loadEchoRoutes(e, routes)
+		benchmarkRoutes(b, e, routes)
+	})
 }
 
 func loadGinRoutes(g *gin.Engine, routes []*Route) {
@@ -598,30 +586,85 @@ func ginHandler(method, path string) gin.HandlerFunc {
 	}
 }
 
-func BenchmarkGinStatic(b *testing.B) {
-	gin.SetMode(gin.ReleaseMode)
-	g := gin.New()
-	loadGinRoutes(g, static)
-	benchmarkRoutes(b, g, static)
+func benchGin(b *testing.B, frmName, routeName string, routes []*Route) {
+	b.ResetTimer()
+	b.Run(fmt.Sprintf("framework=%s/router=%s", frmName, routeName), func(b *testing.B) {
+		gin.SetMode(gin.ReleaseMode)
+		g := gin.New()
+		loadGinRoutes(g, routes)
+		benchmarkRoutes(b, g, routes)
+	})
 }
 
-func BenchmarkGinGitHubAPI(b *testing.B) {
-	gin.SetMode(gin.ReleaseMode)
-	g := gin.New()
-	loadGinRoutes(g, githubAPI)
-	benchmarkRoutes(b, g, githubAPI)
+// for graph
+
+type benchItem struct {
+	BenchFunc  func(b *testing.B, frmName, routeName string, routes []*Route)
+	Framework  string
+	RouterName string
+	Routes     []*Route
 }
 
-func BenchmarkGinGplusAPI(b *testing.B) {
-	gin.SetMode(gin.ReleaseMode)
-	g := gin.New()
-	loadGinRoutes(g, gplusAPI)
-	benchmarkRoutes(b, g, gplusAPI)
-}
+func BenchmarkEchoGin(b *testing.B) {
+	items := []benchItem{
+		// static routes pk
+		{
+			benchEcho,
+			"Echo",
+			"Static",
+			static,
+		},
+		{
+			benchGin,
+			"Gin",
+			"Static",
+			static,
+		},
 
-func BenchmarkGinParseAPI(b *testing.B) {
-	gin.SetMode(gin.ReleaseMode)
-	g := gin.New()
-	loadGinRoutes(g, parseAPI)
-	benchmarkRoutes(b, g, parseAPI)
+		// GitHubAPI pk
+		{
+			benchEcho,
+			"Echo",
+			"GitHubAPI",
+			githubAPI,
+		},
+		{
+			benchGin,
+			"Gin",
+			"GitHubAPI",
+			githubAPI,
+		},
+
+		// GplusAPI pk
+		{
+			benchEcho,
+			"Echo",
+			"GplusAPI",
+			gplusAPI,
+		},
+		{
+			benchGin,
+			"Gin",
+			"GplusAPI",
+			gplusAPI,
+		},
+
+		// ParseAPI pk
+		{
+			benchEcho,
+			"Echo",
+			"ParseAPI",
+			parseAPI,
+		},
+		{
+			benchGin,
+			"Gin",
+			"ParseAPI",
+			parseAPI,
+		},
+	}
+
+	for _, item := range items {
+		item.BenchFunc(b, item.Framework, item.RouterName, item.Routes)
+	}
 }

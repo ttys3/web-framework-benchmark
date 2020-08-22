@@ -1,0 +1,13 @@
+goos: linux
+goarch: amd64
+pkg: github.com/vishr/web-framework-benchmark
+BenchmarkEchoGin/framework=Echo/router=Static-12         	   38719	     30131 ns/op	    2153 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Gin/router=Static-12          	   34903	     33395 ns/op	    8531 B/op	     157 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GitHubAPI-12      	   25060	     45541 ns/op	    3011 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GitHubAPI-12       	   24819	     47589 ns/op	   11145 B/op	     203 allocs/op
+BenchmarkEchoGin/framework=Echo/router=GplusAPI-12       	  505262	      2389 ns/op	     172 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Gin/router=GplusAPI-12        	  438598	      2689 ns/op	     703 B/op	      13 allocs/op
+BenchmarkEchoGin/framework=Echo/router=ParseAPI-12       	  290649	      4251 ns/op	     327 B/op	      26 allocs/op
+BenchmarkEchoGin/framework=Gin/router=ParseAPI-12        	  225582	      5007 ns/op	    1401 B/op	      26 allocs/op
+PASS
+ok  	github.com/vishr/web-framework-benchmark	11.207s

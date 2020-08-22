@@ -5,4 +5,5 @@ go 1.14
 require (
 	github.com/gin-gonic/gin v1.6.3
 	github.com/labstack/echo/v4 v4.1.16
+	gonum.org/v1/plot v0.7.0 // indirect
 )
