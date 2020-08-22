@@ -1,4 +1,4 @@
-module webfrmbench
+module github.com/vishr/web-framework-benchmark
 
 go 1.14
 
