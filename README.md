@@ -1,6 +1,20 @@
 # Web Framework Benchmark
 
+modified from <https://github.com/vishr/web-framework-benchmark>
+
+## Changelog
+
+- Visualized the benchmarking with GNU plot
+- Upgraded `Echo` to v4 latest version and `Gin` to the latest verrsion
+
 > `gin` vs `echo`
+
+```go
+
+github.com/gin-gonic/gin v1.6.3
+
+github.com/labstack/echo/v4 v4.1.16
+```
 
 ## Requirement
 
@@ -17,6 +31,9 @@ git clone https://github.com/ttys3/web-framework-benchmark.git
 ```bash
 cd web-framework-benchmark
 go test -bench=.
+
+# to see graph
+# make
 ```
 
 ## Sample Result
