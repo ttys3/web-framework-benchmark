@@ -21,6 +21,12 @@ go test -bench=.
 
 ## Sample Result
 
+the graph was generated with <https://github.com/ttys3/benchdraw>
+
+### ns/op (the lower the better)
+
+![ouput.svg](ouput.svg)
+
 hardware
 
 ```bash
